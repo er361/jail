@@ -10,7 +10,7 @@ import Category from '../queries/Category.js';
 import rootApp from '../components/rootApp.js';
 
 //site containers
-import AppComponent from '../components/App/App.js';
+import AppComponent from '../components/App/FronApp/App.js';
 
 //admin components
 import AdminComponent from '../components/Admin/App/AppComponent.js';

@@ -1,8 +1,10 @@
+
+
 .footer {
 	height: 1205;
 	.footer__head {
 		height: 850px;
-		background-image: url("../../../assets/img/bgfooter.jpg");
+		background-image: url("./img/bgfooter.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center center;
@@ -26,7 +28,7 @@
 				@include clearfix;
 				color: #fff;
 				padding-left: 70px;
-				list-style-image: url("../../../assets/img/check.png");
+				list-style-image: url("./img/check.png");
 				li {
 					margin-top: 24px;
 					font-size: em(14);

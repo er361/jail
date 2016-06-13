@@ -1,0 +1,64 @@
+
+
+
+.contact {
+	.contact__info {
+		p {
+			margin-top: 7px;
+			&:first-child {
+				margin-top: 25px;
+			}
+			font-weight: bold;
+			span {
+				font-weight: normal;
+			}
+		}
+		.info__maps {
+			background-color: red;
+			margin-top: 32px;
+			margin-bottom: 50px;
+			border: 6px #d9c1ac solid;
+			overflow: hidden;
+		}
+		.contact__form {
+			p {
+				font-size: em(30);
+				color: #666;
+			}
+			form {
+				input:nth-child(1) {
+					margin-top: 110px;
+				}
+				input:nth-child(1), input:nth-child(2) {
+					width: 485px;
+					height: 40px;
+					border: 1px #ccc solid;
+					padding-left: 10px;
+					color: #959595;
+				}
+				input:nth-child(2) {
+					margin-top: 8px;
+					margin-bottom: 8px;
+				}
+				textarea {
+					display: block;
+					border: 1px #ccc solid;
+					color: #ccc;
+					width: 485px;
+					height: 140px;
+					outline: none;
+				}
+				input[type="submit"] {
+					width: 150px;
+					height: 35px;
+					background-color: #ff6d6d;
+					box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+					margin-top: 20px;
+					cursor: pointer;
+					color: #fff;
+					font-size: em(18);
+				}
+			}
+		}
+	}
+}

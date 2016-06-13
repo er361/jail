@@ -1,0 +1,9 @@
+@import "./style/style.scss";
+.top.menu {
+  display: none !important;
+}
+@media screen and (max-width: 700px) {
+  .top.menu {
+    display: block !important;
+  }
+}

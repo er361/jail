@@ -1,33 +1,34 @@
 import React from 'react';
+// import './Header.scss';
 
 export default class Header extends React.Component {
   render() {
     return (
-      <header class="header">
-              <div class="header__head">
-                  <div class="container">
-                      <div class="head__logo">
-                          <img src="assets/baran.png" alt=""/>
+      <header className="header">
+              <div className="header__head">
+                  <div className="container">
+                      <div className="head__logo">
+                          <img src={require('../../../assets/img/baran.png')} alt=""/>
                           <p>Продажа скота и молока</p>
                           <p>JAILAY</p>
                       </div>
-                      <nav class="head__nav">
+                      <nav className="head__nav">
                           <ul>
                               <li><a href="">Курбан Байрам</a></li>
                               <li><a href="">Оплата и доставка</a></li>
                               <li><a href="">Контакты</a></li>
                           </ul>
                       </nav>
-                      <div class="head__contact">
+                      <div className="head__contact">
                           <p>Звоните нам:</p>
-                          <p><i class="fa fa-phone" aria-hidden="true"></i>8 (727) 354- 57-57</p>
-                          <p><i class="fa fa-phone" aria-hidden="true"></i>8 (702) 444-47-02</p>
+                          <p><i className="fa fa-phone" aria-hidden="true"></i>8 (727) 354- 57-57</p>
+                          <p><i className="fa fa-phone" aria-hidden="true"></i>8 (702) 444-47-02</p>
                       </div>
                   </div>
               </div>
-              <div class="header__body">
-                  <div class="container">
-                      <nav class="body__nav">
+              <div className="header__body">
+                  <div className="container">
+                      <nav className="body__nav">
                           <ul>
                               <li><a href="">КРУПНЫЙ РОГАТЫЙ СКОТ  </a></li>
                               <li><a href="">МЕЛКИЙ РОГАТЫЙ СКОТ  </a></li>
