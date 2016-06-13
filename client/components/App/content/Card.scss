@@ -1,0 +1,29 @@
+
+.ui.card{
+  .image {
+    height: 200px !important;
+  }
+  .content{
+    ul{
+      text-align: center;
+      li{
+      }
+    }
+    a{
+      text-decoration: none;
+      color: black;
+    }
+    span.art{
+      font-size: 0.9em;
+    }
+    span.poroda{
+      font-size: 0.9em;
+    }
+    span.title{
+      font-size: 2em;
+    }
+    span.price{
+      font-size: 2.2em;
+    }
+  }
+}

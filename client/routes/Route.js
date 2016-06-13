@@ -3,15 +3,15 @@ import { IndexRoute, Route, Redirect, Router } from 'react-router';
 
 //queries
 import ViewerQuery from '../queries/ViewerQuery';
-import CategoryListQuery from '../queries/CategoryListQuery.js';
-import Category from '../queries/Category.js';
+
 
 //root component (wrapper)
 import rootApp from '../components/rootApp.js';
 
 //site containers
-import AppComponent from '../components/App/FronApp/App.js';
-
+import AppContainer from '../components/App/FronApp/App.js';
+import ProdCard from '../components/App/card/ProdCard.jsx';
+import Content from '../components/App/content/Content.jsx';
 //admin components
 import AdminComponent from '../components/Admin/App/AppComponent.js';
 import CategoryComponent from '../components/Admin/Category/CategoryComponent.js';
@@ -23,12 +23,16 @@ import SubCategoryContainer from '../components/Admin/SubCategory/App.jsx';
 
 export default (
     <Route path='/' component={rootApp}>
-      <IndexRoute component={AppComponent} queries={ViewerQuery} />
-      <Route path='admin' component={AdminContainer} queries={ViewerQuery} />
-      <Route component={AdminComponent}>
-        <Route path='mebel'  component={Mebel} queries={ViewerQuery} />
+      <IndexRoute component={AppContainer} queries={ViewerQuery} />
+      <Route path='admin' component={AdminContainer} queries={ViewerQuery} >
+        <IndexRoute component={Mebel} queries={ViewerQuery} />
+      </Route>
+      <Route component={AdminContainer} queries={ViewerQuery}>
         <Route path='category' component={CategoryContainer} queries={ViewerQuery} />
-        <Route path='subcategory' component={SubCategoryContainer} queries={ViewerQuery}  />
+        <Route path='subcategory' component={SubCategoryContainer} queries={ViewerQuery} />
+      </Route>
+      <Route component={AppContainer} queries={ViewerQuery}>
+        <Route path='card' component={ProdCard} queries={ViewerQuery} />
       </Route>
       <Redirect from='*' to='/' />
     </Route>

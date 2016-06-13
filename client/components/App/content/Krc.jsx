@@ -3,6 +3,7 @@ import Relay from 'react-relay';
 import Unit from './Unit.jsx';
 import classNames from 'classnames';
 import Card from './Card.jsx';
+import './Krc.scss';
 import {Grid, Col, Row} from 'react-bootstrap';
 
 class Krc extends React.Component {
@@ -50,9 +51,9 @@ class Krc extends React.Component {
           })
           return <div key={index} role="tabpanel" className={tabClass} id={index}>
             {prodFiltr.map(edge =>
-                <div key={edge.node.id}  className='col-xs-3'>
-                  <Card>{edge.node}</Card>
-                </div>
+                  <div key={edge.node.id}  className='col-xs-3'>
+                    <Card>{edge.node}</Card>
+                  </div>
             )}</div>
         // console.log(tabClass);
       })
@@ -66,20 +67,18 @@ class Krc extends React.Component {
     // console.log(subCatFiltr);
     return (
       <div>
-
-        <ul className='nav nav-tabs' role='tablist'>
-          {subCatFiltr.map((edge,index) => {
-            var liClass = classNames({'active': false});
-          if(index == 0)
-            liClass = classNames({'active': true});
-            return (
-              <li key={edge.node.id} role="presentation" className={liClass}>
-                <a href={`#${index}`} aria-controls={index} role="tab" data-toggle="tab">{edge.node.title}</a>
-              </li>
-            )
-          })}
-        </ul>
-
+          <ul className='nav nav-tabs' role='tablist'>
+            {subCatFiltr.map((edge,index) => {
+              var liClass = classNames({'active': false});
+            if(index == 0)
+              liClass = classNames({'active': true});
+              return (
+                <li key={edge.node.id} role="presentation" className={liClass}>
+                  <a href={`#${index}`} aria-controls={index} role="tab" data-toggle="tab">{edge.node.title}</a>
+                </li>
+              )
+            })}
+          </ul>
         <div className="tab-content">
             {this.makeTabs(subCatFiltr)}
         </div>
@@ -107,6 +106,7 @@ export default Relay.createContainer(Krc, {
     fragment on MebelConnection {
       edges {
         node {
+          art
           img
           price
           poroda

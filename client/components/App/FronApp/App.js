@@ -14,7 +14,7 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <Content viewer={viewer} />
+        {this.props.children || <Content viewer={viewer} />}
         <Footer />
       </div>
     );

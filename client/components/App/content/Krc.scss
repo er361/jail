@@ -1,3 +1,30 @@
-.tabContetn{
-  
+@import "../../variables.scss";
+
+ul.nav.nav-tabs {
+  list-style: none;
+  background-color: $shapka;
+  text-align: center;
+  padding-top: 2px;
+  li {
+      display: inline-block;
+      float: none;
+      a{
+        // color: blue;
+        margin: 0;
+        border-radius: 0;
+      }
+      a:link {
+        color: blue;
+      }
+      a:hover{
+        border-bottom: 0;
+        color: $shapka;
+        background-color: white;
+      }
+
+  }
+}
+.tab-content {
+  padding-top: 10px;
+  margin-bottom: 100px!important;
 }
