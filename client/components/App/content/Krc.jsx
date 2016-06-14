@@ -49,7 +49,7 @@ class Krc extends React.Component {
             'tab-pane': true,
             'active': true
           })
-          return <div key={index} role="tabpanel" className={tabClass} id={index}>
+          return <div key={index} role="tabpanel" className={tabClass} id={edge.node.id + index}>
             {prodFiltr.map((edge,index) =>{
               if(index == 4)
                return null
@@ -70,7 +70,7 @@ class Krc extends React.Component {
   render() {
     const { props: {prod: prod, subcategories: subcategories } } = this
     var subCatFiltr = this.filterCat(subcategories.edges,this.state.category);
-    // console.log(subCatFiltr);
+    console.log(prod.edges[0].node.id +1);
     return (
       <div className='tabWrapper' >
           <ul className='nav nav-tabs' role='tablist'>
@@ -80,7 +80,7 @@ class Krc extends React.Component {
               liClass = classNames({'active': true});
               return (
                 <li key={edge.node.id} role="presentation" className={liClass}>
-                  <a href={`#${index}`} aria-controls={index} role="tab" data-toggle="tab">{edge.node.title}</a>
+                  <a href={`#${edge.node.id + index}`} aria-controls={index} role="tab" data-toggle="tab">{edge.node.title}</a>
                 </li>
               )
             })}

@@ -20,7 +20,7 @@ module.exports = {
     path: path.join(__dirname, 'build'),
     filename: '[name].js'
   },
-  devtool: 'eval',
+  devtool: 'source map',
   module: {
     loaders: [
     //   {

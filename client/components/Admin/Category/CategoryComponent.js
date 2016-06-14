@@ -60,7 +60,7 @@ export default class Category extends Component {
   render(){
     return(
       <div className="ui grid">
-        <div className="four wide column">
+        <div className="five wide column">
           <div className="ui blue segment">
             <div className="ui header">Создать категорию</div>
             <div className="ui action input">

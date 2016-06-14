@@ -1,11 +1,20 @@
 .icon {
-  margin-top: 50px;
-  margin-left: 500px;
-  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  // border: 1px solid #000;
+  .iconWrapper {
+    // border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    border-bottom: 2px solid #333333;
+    .iconImage{
+      // border: 1px solid #000;
+    }
+  }
 }
-.icon2 {
-  margin-top: 50px;
-  margin-left: 420px;
-  margin-bottom: 50px;
+.wrapImg {
   border: 1px solid #000;
+  height: 100px;
+  width: 100px;
 }

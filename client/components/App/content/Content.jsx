@@ -2,17 +2,14 @@ import React from 'react';
 import Relay from 'react-relay';
 import Slide from './Slide.jsx';
 import Krc from './Krc.jsx';
-import './contetn.scss';
-import ic1 from '../../../assets/icon1.png';
-import ic2 from '../../../assets/melki.png';
-import ic3 from '../../../assets/petyx_icon.png';
-import ic4 from '../../../assets/krolic_icon.png';
-import ic5 from '../../../assets/moloko.png';
-import slImg from '../../../assets/Cows2.png';
-import slImg1 from '../../../assets/br.png';
-import slImg2 from '../../../assets/pt.png';
-import slImg3 from '../../../assets/krl.png';
-import slImg4 from '../../../assets/kz.png';
+import BezCat from './BezCat.jsx';
+import StaticMoloko from './StaticMoloko.jsx';
+import './Contetn.scss';
+import krc_ic from '../../../assets/icons/krc.gif';
+import mrc_ic from '../../../assets/icons/mrc.gif';
+import ptc_ic from '../../../assets/icons/ptc.gif';
+import kro_ic from '../../../assets/icons/krol.gif';
+import moloko_ic from '../../../assets/icons/molpko.gif';
 
 class Content extends React.Component {
   componentDidMount() {
@@ -32,6 +29,16 @@ class Content extends React.Component {
     }
     return out[0];
   }
+  makeIcon = (img) => {
+    return(
+      <div className="icon">
+        <div className="iconWrapper">
+          <img className="iconImage" src={img} />
+        </div>
+      </div>
+    )
+
+  }
   render() {
     // console.log(this.props.relay);
     const { props: { viewer:{
@@ -40,13 +47,25 @@ class Content extends React.Component {
       categories: categories
     }  } } = this
     var krc = this.filter(categories.edges,'Крупно рогатый скот');
+    var mrc = this.filter(categories.edges, 'Мелкий рогатый скот');
+    var ptc = this.filter(categories.edges, 'Птица');
+    var krol = this.filter(categories.edges, 'Кролики');
+    var moloko = this.filter(categories.edges,'Молоко');
     //  console.log(krc);
     return (
       <div>
         <Slide />
-            <img className="icon" whidth="200" height="100" src={ic1} />
         <div className="ui container">
+          {this.makeIcon(krc_ic)}
           <Krc  subcategories={subcategories} prod={mebels}>{krc}</Krc>
+          {this.makeIcon(mrc_ic)}
+          <Krc subcategories={subcategories} prod={mebels}>{mrc}</Krc>
+          {this.makeIcon(ptc_ic)}
+          <Krc subcategories={subcategories} prod={mebels}>{ptc}</Krc>
+          {this.makeIcon(kro_ic)}
+          <BezCat prod={mebels}>{krol}</BezCat>
+          {this.makeIcon(moloko_ic)}
+          <StaticMoloko prod={mebels}>{moloko}</StaticMoloko>
         </div>
       </div>
     );
@@ -73,6 +92,8 @@ export default Relay.createContainer(Content, {
       }
       mebels(first: $limit) {
         ${Krc.getFragment('prod')}
+        ${BezCat.getFragment('prod')}
+        ${StaticMoloko.getFragment('prod')}
       }
     }
     `
