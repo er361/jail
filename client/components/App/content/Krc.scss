@@ -1,4 +1,10 @@
 @import "../../variables.scss";
+.tabWrapper {
+	// display: flex;
+	overflow: auto;
+	// float: none;
+	margin-bottom: 30px;
+}
 		ul.nav.nav-tabs {
 			border: 0;
 			text-align: center;

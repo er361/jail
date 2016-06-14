@@ -13,16 +13,19 @@ export default class Card extends React.Component {
       <div className="cattle">
         <div className="category__item">
           <div className="item__wrapper">
-              <div className="item__img">
-                  <img src={require(`../../../assets/uploads/${children.img}`)} alt=""/>
+              <div className="imgWraper">
+                  <img className='img-responsive' src={require(`../../../assets/uploads/${children.img}`)} alt=""/>
               </div>
               <div className="item__desc">
-                  <p>АРТ. - {children.art}</p>
-                  <p>{children.title}</p>
-                  <p>Порода - {children.poroda}</p>
-                  <p>{children.price}</p>
+                <div className='textWrapper'>
+                    <p>АРТ. - {children.art}</p>
+                    <p>{children.title}</p>
+                    <p>Порода - {children.poroda}</p>
+                    <p>{children.price}</p>
+                    <Link className='fluid ui primary button' to='card'>Заказать</Link>
+                </div>
+
               </div>
-              <Link className='fluid ui primary button' to='card'>Заказать</Link>
           </div>
         </div>
       </div>

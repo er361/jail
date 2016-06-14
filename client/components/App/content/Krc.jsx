@@ -72,7 +72,7 @@ class Krc extends React.Component {
     var subCatFiltr = this.filterCat(subcategories.edges,this.state.category);
     // console.log(subCatFiltr);
     return (
-      <div >
+      <div className='tabWrapper' >
           <ul className='nav nav-tabs' role='tablist'>
             {subCatFiltr.map((edge,index) => {
               var liClass = classNames({'active': false});
