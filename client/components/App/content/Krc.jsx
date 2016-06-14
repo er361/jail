@@ -50,10 +50,16 @@ class Krc extends React.Component {
             'active': true
           })
           return <div key={index} role="tabpanel" className={tabClass} id={index}>
-            {prodFiltr.map(edge =>
+            {prodFiltr.map((edge,index) =>{
+              if(index == 4)
+               return null
+              else
+                return (
                   <div key={edge.node.id}  className='col-xs-3'>
                     <Card>{edge.node}</Card>
                   </div>
+                )
+            }
             )}</div>
         // console.log(tabClass);
       })
@@ -66,7 +72,7 @@ class Krc extends React.Component {
     var subCatFiltr = this.filterCat(subcategories.edges,this.state.category);
     // console.log(subCatFiltr);
     return (
-      <div>
+      <div >
           <ul className='nav nav-tabs' role='tablist'>
             {subCatFiltr.map((edge,index) => {
               var liClass = classNames({'active': false});

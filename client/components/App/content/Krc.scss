@@ -1,29 +1,45 @@
 @import "../../variables.scss";
+		ul.nav.nav-tabs {
+			border: 0;
+			text-align: center;
+			margin-top: 35px;
+			background-color: #9cc038;
+			height: 50px;
+			li {
+				float:none;
+				display: inline-block;
+				a {
+					margin: 0;
+					padding: 0;
+					border-radius: 0;
+					border: 0;
+					margin-top: 6px;
+					display: block;
+					text-decoration: none;
+					color: #fff;
+					text-align: center;
+				  padding: 14px 14px;
+					transition: all .2s;
+					&:hover {
+						background-color: #fff;
+						color: #9cc038;
+					}
+				}
+				&:first-child {
+					a {
+						margin-left: 6px;
+					}
+				}
+			}
+			li.active{
+				display: inline-block;
 
-ul.nav.nav-tabs {
-  list-style: none;
-  background-color: $shapka;
-  text-align: center;
-  padding-top: 2px;
-  li {
-      display: inline-block;
-      float: none;
-      a{
-        // color: blue;
-        margin: 0;
-        border-radius: 0;
-      }
-      a:link {
-        color: blue;
-      }
-      a:hover{
-        border-bottom: 0;
-        color: $shapka;
-        background-color: white;
-      }
-
-  }
-}
+				a{
+					color: #9cc038;
+					border: 0;
+				}
+			}
+		}
 .tab-content {
   padding-top: 10px;
   margin-bottom: 100px!important;

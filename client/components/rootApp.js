@@ -12,7 +12,7 @@ export default class rootApp extends Component {
             <Link className="item" to='/'>Home</Link>
             <Link className="item" to='admin'>Admin</Link>
             <Link className="item" to='card'>Card</Link>
-            <Link className="item" to='app'>App</Link>
+            <Link className="item" to='catalog'>Catalog</Link>
         </div>
           {this.props.children}
       </div>

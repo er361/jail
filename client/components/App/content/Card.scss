@@ -1,29 +1,17 @@
 
-.ui.card{
-  .image {
-    height: 200px !important;
-  }
-  .content{
-    ul{
-      text-align: center;
-      li{
-      }
+.item__wrapper {
+    img {
+      width: 100%;
+      height: 120px;
     }
-    a{
-      text-decoration: none;
-      color: black;
-    }
-    span.art{
-      font-size: 0.9em;
-    }
-    span.poroda{
-      font-size: 0.9em;
-    }
-    span.title{
-      font-size: 2em;
-    }
-    span.price{
-      font-size: 2.2em;
-    }
-  }
+}
+.item__wrapper:hover {
+  box-shadow: 10px;
+}
+.cattle{
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  transition: box-shadow 0.3s;
+}
+.cattle:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }

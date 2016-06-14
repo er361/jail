@@ -33,6 +33,7 @@ class Content extends React.Component {
     return out[0];
   }
   render() {
+    // console.log(this.props.relay);
     const { props: { viewer:{
       subcategories: subcategories,
       mebels: mebels,
@@ -42,29 +43,6 @@ class Content extends React.Component {
     //  console.log(krc);
     return (
       <div>
-        <button type="button" className="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-          Launch demo modal
-        </button>
-
-        <div className="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div className="modal-dialog" role="document">
-            <div className="modal-content">
-              <div className="modal-header">
-                <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 className="modal-title" id="myModalLabel">Modal title</h4>
-              </div>
-              <div className="modal-body">
-                ...
-              </div>
-              <div className="modal-footer">
-                <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" className="btn btn-primary">Save changes</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
         <Slide />
             <img className="icon" whidth="200" height="100" src={ic1} />
         <div className="ui container">
@@ -75,10 +53,9 @@ class Content extends React.Component {
   }
 }
 export default Relay.createContainer(Content, {
-  prepareVariables(){
-    return {
-      limit: 100
-    }
+  initialVariables: {
+    limit: 100,
+    // prodLimit: 4
   },
   fragments: {
     viewer: () => Relay.QL `
